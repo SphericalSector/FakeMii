@@ -1,12 +1,9 @@
 #FakeMii
 
-A Simple proxy tamper for 3DS/N3DS (and probably other nintendo devices), working on Node.js. 
-This proxy will fake the nintendo connection test so that you can use it on a WLAN without internet.
-It is useful if you don't have a router or an internet AP, and wish to use the Wifi anyway. (FTP, netloader, ...)
-
-It can also deliver the launcher page for spider exploit, IE start gateway's launcher.dat, Decrypt9, rxTools... The static html version of the launcher was made bt duke_srg, I take no credit for it.
-
-Any other page will send a 404 error.
+A simple proxy tamper designed by Lectem for 3DS/N3DS, with small adjustments to use with the Nintendo Switch.
+ 
+This proxy will fake the Nintendo connection test so that you can pass the test on a network without internet access, any other page will send a 404 error. 
+It is useful if you want to use LAN services (such as FTP) without having/providing internet access.
 
 
 ##HOWTO
@@ -14,26 +11,20 @@ Any other page will send a 404 error.
 
 ###Run FakeMii
 1. Install [Node.js](http://nodejs.org/)
-2. run `node FakeMii.js` or simply execute run.bat if you work on Windows
-3. It's running !
+2. Run `FakeMii.js` or execute run.bat
+3. The server should now be running
 
-###Set up the Nintendo 3DS
-1. Get your computer local IP adress. Select the one from the network your console is connecting to.
+###Set up the Nintendo Switch
+1. Get your computer's local IP address.
   1. On Windows : Open a cmd.exe and type `ipconfig`
   2. On linux : `ip addr show`
-2. Configure your console proxy
-  1. Go to your console Proxy settings (Internet Settings->Connection Settings->Connection Settings->Connection->Change Settings)
-  2. Set Proxy Settings to Yes
-  3. Go to Detailed Setup
-  4. Proxy server : The IP adress of your computer. Port:3000
-3. Run the test !
+2. Configure your Switch's proxy settings.
+  1. Go to your Switch's internet settings (Internet Settings->Selection connection->Change Settings)
+  2. Set Proxy Settings to On
+  3. Set Server as the IP address of your computer
+  4. Set Port to 3000
+3. Save your settings and connect to the network, you should now pass the test!
 
-
-###Start your launcher.dat !
-1. Run FakeMii and configure your 3DS
-2. Open your 3DS browser
-3. Enter the url `http://launcher`
-4. Enjoy !
 
 ###Running a WLAN on windows (can be used even while connected to another AP via WIFI)
 1. Configure your hosted network if never done before
@@ -46,4 +37,4 @@ Any other page will send a 404 error.
 This is usually done with `hostapd`.
 An overview of the tool can be found [here](https://wiki.archlinux.org/index.php/Software_access_point)
 
-Thanks to cell9 of #3dsdev for giving me his own server script
+Thanks to cell9 of #3dsdev for providing his own server script
